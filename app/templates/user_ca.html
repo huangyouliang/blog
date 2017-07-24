@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+添加用户
+<form action="{% url 'user_create' %}" method="post">
+    {% csrf_token %}
+    {{ userform.as_p }}
+    <input type="submit" value="提交" name=""/>
+</form>
+
+</body>
+</html>

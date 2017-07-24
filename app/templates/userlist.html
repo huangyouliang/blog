@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="post">
+    {% csrf_token %}
+        <table border="1">
+            <tr><th>ID</th></th><th>姓名</th><th>学科</th><th>职位</th></tr>
+            {% for user in user_list %}
+
+                <tr>
+                    <th><a href="{% url 'user_update' user.id %}">{{ user.id }}</a></th>
+                    <th>{{ user.username }}</th>
+                    <th>{{ user.xueke }}</th>
+                    <th>{{ user.zhiwu }}</th>
+                    <th><a href="{% url 'user_del' user.id %}">删除</a></th>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <br><br>
+        <a href="{% url 'user_create' %}">添加用户</a>
+    </form>
+</body>
+</html>

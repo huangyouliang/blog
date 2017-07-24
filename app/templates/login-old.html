@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<body>
+        <form  action="{% url 'login'%}" method="post">
+            {% csrf_token %}
+            {{ userform.as_p }}
+                <input type="submit" value="登录" class="btn btn-primary">
+                <a href="/contactme/"><input type="button" value="忘记密码" class="btn btn-danger"></a>
+                <a href="/contactme/"><input type="button" value="注册" class="btn btn-success"></a>
+        </form>
+{#<form  method="post" action="{% url 'login'%}">#}
+{#    {% csrf_token %}#}
+{#    <tr>用户名：<input type = "text" name="username"/></tr>#}
+{#    <tr>密码：<input type="text" name="password"/> </tr>#}
+{#  <input type="submit" name="button2" id="button2" value="登录" />#}
+{#</form>#}
+</body>
+</html>

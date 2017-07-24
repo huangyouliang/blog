@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{object.nome}}</title>
+</head>
+<body>
+
+    <h1>Bem vindo, {{object.nome}} a sua pagina de detalhes</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">ATUALIZAR</button>
+    </form>
+
+    <br>
+    <a href="{% url 'cliente_delete' object.id %}">Excluir</a>
+    <a href="{% url 'cliente_lista' %}">voltar</a>
+
+</body>
+</html>
